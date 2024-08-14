@@ -25,6 +25,6 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t "${{ env.GAR_REPO_SL }}"/"${{ env.APP_NAME }}":${{ github.event.inputs.engine_image_tag }}    
-        docker tag ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }} ${{ secrets.DOCKER_USERNAME }}/my-app:latest
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-app:${{ github.sha }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/my-app:latest
+        docker tag "${{ env.GAR_REPO_SL }}"/"${{ env.APP_NAME }}":${{ github.event.inputs.engine_image_tag }}
+        docker push "${{ env.GAR_REPO_SL }}"/"${{ env.APP_NAME }}":${{ github.event.inputs.engine_image_tag }}
+        docker push "${{ env.GAR_REPO_SL }}"/"${{ env.APP_NAME }}":${{ github.event.inputs.engine_image_tag }}
